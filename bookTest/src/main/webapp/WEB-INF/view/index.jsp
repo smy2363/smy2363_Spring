@@ -4,14 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>bookDetail.jsp</title>
+<title>도서관리</title>
+<link rel="stylesheet" href="">
 </head>
 <body>
 
-	<h1> 도서 정보 출력 페이지</h1>
-	
-	<h3> 책 제목 : ${BookTitle}</h3>
-	<h3> 책 출판사 : ${BookPublisher}</h3>
 
-</body> 	
+</body>
 </html>

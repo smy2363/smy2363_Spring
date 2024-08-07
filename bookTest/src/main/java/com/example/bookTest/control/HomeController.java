@@ -3,13 +3,27 @@ package com.example.bookTest.control;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.bookTest.Dto.BankDto;
 import com.example.bookTest.Dto.BookDto;
 import com.example.bookTest.Dto.InfoDto;
 
 @Controller
 public class HomeController {
+	
+	@GetMapping("/input")
+	public String bankView() {
+		return "bank";
+	}
+	
+	@PostMapping("/result")
+	public ModelAndView bank(@ModelAttribute BankDto bankDto) {
+		ModelAndView ba = new ModelAndView("result");
+		ba.addObject("BankMoney", bankDto.getMoney());
+		return ba;
+	}
 	
 	
 	
