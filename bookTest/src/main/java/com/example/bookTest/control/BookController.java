@@ -13,5 +13,13 @@ public class BookController {
 	
 		return mv;
 	}
+	
+	@GetMapping("/bookWrite")
+	public ModelAndView write() {
+		ModelAndView mv = new ModelAndView("book/bookForm");
+		mv.addObject("count", 5);
+		
+		return mv;
+	}
 
 }
