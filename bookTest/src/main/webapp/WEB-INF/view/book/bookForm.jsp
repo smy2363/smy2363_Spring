@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>도서 정보 작성</title>
 </head>
+<link rel="stylesheet" href="/css/write.css">
 <body>
 
 	<div id="wrap">
@@ -15,9 +16,26 @@
 		<form method="post" action="/enroll">
 			<div id="formWrap">
 				<div class="inputField">
-					<label form=""></label>
-					<input type="" name="" id="">
+					<label for="bookTitle"> 책 제목 </label>
+					<input type="text" name="bookTitle" id="bookTitle">
 				</div>
+				<div class="inputField">
+					<label for="bookAuthor"> 저자 </label>
+					<input type="text" name="bookAuthor" id="bookAuthor">
+				</div>
+				<div class="inputField">
+					<label for="bookCost"> 가격 </label>
+					<input type="number" name="bookCost" id="bookCost">
+				</div>
+				<div class="inputField">
+					<label for="bookPage">페이지수</label>
+					<input type="number" name="bookPage" id="bookPage">
+				</div>
+				<div class="inputField">
+					<label for="publisher">출판사</label>
+					<input type="text" name="publisher" id="publisher">
+				</div>
+				<button id="bt">등록</button>
 			
 			</div>
 		</form>
