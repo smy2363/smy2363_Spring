@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* coffe.css */
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul{list-style: none;}
+
+#wrap{
+	width: 800px;
+	margin:0 auto;
+}
+
+#wrap h2{padding: 40px 0;}
+
+#mainTitle{
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#enroll{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	text-decoration: none;
+	color: inherit;
+}
+
+#enroll:hover{
+	font-weight: 800;
+	color: blue;
+}
+
+#bookListWrap{
+	padding: 15px;
+}
+
+#bookList{
+	width: 100%;
+}
+
+#bookList .blist{
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.coffeId{
+	width: 40%;
+}
+
+.itemName{width: 40%;}
+
+.price{width: 40%;}
+
+.decaffein{width: 40%;}

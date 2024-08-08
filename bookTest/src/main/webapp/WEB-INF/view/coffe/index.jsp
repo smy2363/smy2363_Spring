@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>커피메뉴</title>
-<link rel="stylesheet" href="/css/default.css">
+<link rel="stylesheet" href="/css/coffe.css">
 </head>
 <body>
 
@@ -17,11 +19,20 @@
 		</div>
 		<div id="bookListWrap">
 			<ul id="bookList">
-				<li class="blist">
-					<span class="itemName"></span>
-					<span class="price"></span>
-					<span class="decaffein"></span>
-				</li>
+				<c:forEach var="row" items="${list}">
+					<li class="blist">
+						<span class="coffeId">${row.coffeId}</span>
+						<span class="itemName">${row.itemName}</span>
+						<span class="price">${row.price}</span>
+						<span class="decaffein">${row.decaffein}</span>
+					</li>
+				</c:forEach>
+					<li class="blist">
+						<span class="coffeId"></span>
+						<span class="itemName"></span>
+						<span class="price"></span>
+						<span class="decaffein"></span>
+					</li>
 				
 				
 			</ul>
