@@ -8,6 +8,17 @@
 <link rel="stylesheet" href="/css/default.css">
 </head>
 <body>
+
+	<a href="/coffeReg">커피등록</a>
+	
+	<!--
+	클래스명 
+		컨트롤 : CoffeControl
+		서비스 : CoffeService
+		DTO   : CoffeDto
+		DAO  : CoffeDao
+		
+	 -->
 	
 	<div id="wrap">
 		<h2> 도서관리 </h2>
