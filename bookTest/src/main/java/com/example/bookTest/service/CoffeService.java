@@ -8,13 +8,10 @@ import com.example.bookTest.Dto.CoffeDto;
 
 @Service
 public class CoffeService {
-	
-	private final CoffeDao coffeDao;
-	
 	@Autowired
-	public CoffeService(CoffeDao coffeDAO) {
-		this.coffeDao=coffeDAO;
-	}
+	private  CoffeDao coffeDao;
+	
+
 	
 	public void  coffeSave(CoffeDto coffeDto) {
 		

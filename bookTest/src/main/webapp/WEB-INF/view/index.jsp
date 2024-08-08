@@ -9,17 +9,8 @@
 </head>
 <body>
 
-	<a href="/coffeReg">커피등록</a>
-	
-	<!--
-	클래스명 
-		컨트롤 : CoffeControl
-		서비스 : CoffeService
-		DTO   : CoffeDto
-		DAO  : CoffeDao
-		
-	 -->
-	
+	${list.get(0).bookTitle}
+
 	<div id="wrap">
 		<h2> 도서관리 </h2>
 		<div id="mainTitle">

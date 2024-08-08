@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BookInfoDto {
+	private int bookId;
 	private String bookTitle; //책 제목
 	private String bookAuthor; // 저자
 	private int bookCost; // 가격

@@ -17,18 +17,16 @@ public class CoffeControl {
 	@Autowired
 	private CoffeService coffeService;
 	
+	@GetMapping("/coffe")
+	public String home() {
+		return "coffe/index";
+	}
+	
 	@GetMapping("/coffeReg")
 	public String CoffeView() {
 				
-		return "Coffe";
+		return "coffe/Coffe";
 
-	}
-	
-	@GetMapping("/coffeSave")
-	public ModelAndView write() {
-		ModelAndView mv = new ModelAndView("/Coffe");
-		
-		return mv;
 	}
 	
 	@GetMapping("/coffeSave")
@@ -36,7 +34,7 @@ public class CoffeControl {
 		
 		coffeService.coffeSave(coffeDto);
 		
-		return "index";
+		return "redirect:/Coffe";
 	}
 
 }

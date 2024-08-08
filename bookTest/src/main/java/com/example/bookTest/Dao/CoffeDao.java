@@ -19,7 +19,7 @@ public class CoffeDao {
 	public void insert(CoffeDto coffeDto) {
 		String sql="insert into coffe(item_name, price, decaffein) values(?,?,?)";
 		
-		cf.update(sql , coffeDto.getName(), coffeDto.getPrice(), coffeDto.getDecaffein() );
+		cf.update(sql , coffeDto.getItemName(), coffeDto.getPrice(), coffeDto.getDecaffein() );
 	}
 	
 	

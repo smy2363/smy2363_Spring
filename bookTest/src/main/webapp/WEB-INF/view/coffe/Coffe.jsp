@@ -9,9 +9,9 @@
 <body>
 
 		<form method="get" action ="/coffeSave">
-		주문할 음료 : <input type="text" name="name"><br>
+		주문할 음료 : <input type="text" name="itemName"><br>
 		음료가격 : <input type="text" name="price"><br>
-		디카페인 여부 : <input type="text" name="decaffein"><br>
+		디카페인 여부 : <input type="Number" name="decaffein"><br>
 		<button> 등록 </button>
 	</form>
 		
