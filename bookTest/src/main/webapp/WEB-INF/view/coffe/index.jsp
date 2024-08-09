@@ -21,7 +21,9 @@
 			<ul id="bookList">
 				<c:forEach var="row" items="${list}">
 					<li class="blist">
-						<span class="coffeId">${row.coffeId}</span>
+						<span class="coffeId">
+						<a href="/coffe/view?id=${row.coffeId}">${row.coffeId}</a>
+						</span>
 						<span class="itemName">${row.itemName}</span>
 						<span class="price">${row.price}</span>
 						<span class="decaffein">${row.decaffein}</span>
