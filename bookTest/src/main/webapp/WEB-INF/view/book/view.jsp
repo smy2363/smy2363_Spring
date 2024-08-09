@@ -12,6 +12,12 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/info.css">
 <script src="/javascript/info.js"></script>
+
+<script>
+	inputType=["text","text","text","number","number"];
+	inputName=["bookTitle", "bookAuthor","bookpublisher","bookPage","bookCost"];
+</script>
+
 </head>
 <body>
 
