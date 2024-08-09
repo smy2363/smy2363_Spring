@@ -42,6 +42,11 @@ public class CoffeService {
 			coffeDao.insert(coffeDto);
 		}
 	}
+
+	public void update(CoffeDto coffeDto) {
+		coffeDao.update(coffeDto);
+		
+	}
 	
 
 }

@@ -23,7 +23,7 @@
 					text = text.replace(/[^0-9]/g,""); // 천단위 콤마 표시 제거
 					
 				}
-				$(v).html("<input type='"+inputType[i]+"' name=''"+inputName[i]+" value='"+text+"'>");
+				$(v).html("<input type='"+inputType[i]+"' name='"+inputName[i]+"' value='"+text+"'>");
 				
 			}); // 클래스명이 value인 td 내부 설정
 			
@@ -33,6 +33,8 @@
 			url = url.replace("delete","update")
 			// 주소 : /book/update 또는 /coffe/update로 변경된다.
 			$("#fm").attr("action", url);
+			
+			$(this).off("click");
 			
 			$("#mod").on("click",function(){ $("#fm").submit(); });
 			

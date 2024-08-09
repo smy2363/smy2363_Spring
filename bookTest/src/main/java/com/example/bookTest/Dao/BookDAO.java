@@ -91,5 +91,18 @@ public class BookDAO {
 		}
 		
 	}
+
+	// 수정 도서의 정보를 데이터베이스에 수정하여 저장하기
+	public void update(BookInfoDto bookInfoDto) {
+	
+		String sql="update book set book_title=? , book_author=? ,"+
+		" book_cost=? , book_page=? , book_publisher=? "+
+		" where book_id=?";
+		
+		jt.update(sql,bookInfoDto.getBookTitle(), bookInfoDto.getBookAuthor(),
+				bookInfoDto.getBookCost(), bookInfoDto.getBookPage(),
+				bookInfoDto.getPublisher(), bookInfoDto.getBookId() );
+		
+	}
 	
 }

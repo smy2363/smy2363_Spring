@@ -69,5 +69,14 @@ public class BookController {
 		return "redirect:/";
 	
 	}
+	
+	@GetMapping("/book/update")
+	public String bookUpdate(@ModelAttribute BookInfoDto bookInfoDto, @RequestParam("id")int id) {
+		bookInfoDto.setBookId(id);
+		//System.out.println( bookInfoDto.getBookCost());
+		bookService.update(bookInfoDto);
+		
+		return "redirect:/book/view?id="+id; //상세페이지 이동
+	}
 
 }

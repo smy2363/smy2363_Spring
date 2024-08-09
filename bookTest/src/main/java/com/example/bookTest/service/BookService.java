@@ -50,6 +50,12 @@ public class BookService {
 			bookDao.insert(bookInfoDto); //DAO 클래스의 insert메서드 실행해서 저장
 		}
 	}
+	
+	//도서정보 수정
+	public void update(BookInfoDto bookInfoDto) {
+		bookDao.update(bookInfoDto);
+		
+	}
 
 		
 		
