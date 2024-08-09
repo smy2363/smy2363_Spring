@@ -11,6 +11,7 @@
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/info.css">
+<script src="/javascript/coffe.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" id="modify">수정</button>
-					<button type="button" id="del">삭제</button>
+					<button type="button" id="del" data-id="${coffe.coffeId}">삭제</button>
 				</td>
 			</tr>
 			

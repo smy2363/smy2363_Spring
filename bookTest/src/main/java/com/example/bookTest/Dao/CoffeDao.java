@@ -21,6 +21,13 @@ public class CoffeDao {
 		this.cf=jdbcTemplate;
 	}
 	
+	public void delete(int del) {
+		String sql="delete from coffe where coffe_id=?";
+		
+		cf.update(sql, del);
+	}
+	
+		
 	public CoffeDto findId(int id) {
 		String sql="select * from coffe where coffe_id=?";
 		

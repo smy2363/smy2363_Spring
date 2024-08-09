@@ -46,7 +46,7 @@
 			<tr>
 				<td colspan="2">
 					<button type="button" id="modify">수정</button>
-					<button type="button" id="del">삭제</button>
+					<button type="button" id="del" data-id="${book.bookId}">삭제</button>
 				</td>
 			</tr>
 			

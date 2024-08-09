@@ -59,5 +59,15 @@ public class BookController {
 												   // 오류가 발생되지 않게 하기위해 빈 값이 있는 객체 할당
 		return new ModelAndView("book/view").addObject("book",data);
 	}
+	
+	
+	@GetMapping("/book/delete")
+	public String bookRemove(@RequestParam("id")int bid) {
+		
+		bookService.remove(bid);
+		
+		return "redirect:/";
+	
+	}
 
 }

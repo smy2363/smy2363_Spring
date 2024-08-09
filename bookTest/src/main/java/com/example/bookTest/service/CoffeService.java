@@ -13,6 +13,10 @@ public class CoffeService {
 	@Autowired
 	private  CoffeDao coffeDao;
 	
+	public void remo(int del) {
+		coffeDao.delete(del);
+	}
+	
 	
 	public CoffeDto getCoffe(int id) {
 		if(id != 0) {
