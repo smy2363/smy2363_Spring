@@ -58,7 +58,7 @@ public class CoffeControl {
 		return new ModelAndView("coffe/view").addObject("coffe", data);
 	}
 	
-	@GetMapping("/coffe/del")
+	@GetMapping("/coffe/delete")
 	public String coffeRemove(@RequestParam("id")int del) {
 		coffeService.remo(del);
 		return "redirect:/coffe";

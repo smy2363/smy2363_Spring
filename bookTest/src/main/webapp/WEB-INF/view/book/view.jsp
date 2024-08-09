@@ -15,43 +15,45 @@
 </head>
 <body>
 
-	<div id="wrap">
-		<a href="/"> HOME </a>
-		<table id="viewBox">
-			<tr>
-				<td class="fieldName">책 제목</td>
-				<td class="value">${book.getBookTitle()}</td>					
-			</tr>
-			<tr>
-				<td class="fieldName">저자</td>
-				<td class="value">${book.bookAuthor}</td>					
-			</tr>
-			<tr>
-				<td class="fieldName">출판사</td>
-				<td class="value">${book.publisher}</td>					
-			</tr>
-			<tr>
-				<td class="fieldName">페이지수</td>
-				<td class="value">
-					<fmt:formatNumber value="${book.bookPage}" pattern="#,###"/>
-				</td>					
-			</tr>
-			<tr>
-				<td class="fieldName">가격</td>
-				<td class="value">
-					<fmt:formatNumber value="${book.bookCost}" pattern="#,###원"/>
-				</td>					
-			</tr>
-			
-			<tr>
-				<td colspan="2">
-					<button type="button" id="modify">수정</button>
-					<button type="button" id="del" data-id="${book.bookId}">삭제</button>
-				</td>
-			</tr>
-			
-		</table>
-	</div>
-
+	<form id="fm" method="get" action="/book/delete">
+		<input type="hidden" name="id" value="${book.bookId}">
+		<div id="wrap">
+			<a href="/"> HOME </a>
+			<table id="viewBox">
+				<tr>
+					<td class="fieldName">책 제목</td>
+					<td class="value">${book.getBookTitle()}</td>					
+				</tr>
+				<tr>
+					<td class="fieldName">저자</td>
+					<td class="value">${book.bookAuthor}</td>					
+				</tr>
+				<tr>
+					<td class="fieldName">출판사</td>
+					<td class="value">${book.publisher}</td>					
+				</tr>
+				<tr>
+					<td class="fieldName">페이지수</td>
+					<td class="value">
+						<fmt:formatNumber value="${book.bookPage}" pattern="#,###"/>
+					</td>					
+				</tr>
+				<tr>
+					<td class="fieldName">가격</td>
+					<td class="value">
+						<fmt:formatNumber value="${book.bookCost}" pattern="#,###원"/>
+					</td>					
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<button type="button" id="modify" >수정</button>
+						<button type="button" id="del" data-id="${book.bookId}">삭제</button>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+	</form>
 </body>
 </html>

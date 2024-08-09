@@ -21,13 +21,14 @@ public class CoffeDao {
 		this.cf=jdbcTemplate;
 	}
 	
+	// 커피 삭제
 	public void delete(int del) {
 		String sql="delete from coffe where coffe_id=?";
 		
 		cf.update(sql, del);
 	}
 	
-		
+	// 커피 상세 정보 가져오기	
 	public CoffeDto findId(int id) {
 		String sql="select * from coffe where coffe_id=?";
 		
@@ -52,7 +53,7 @@ public class CoffeDao {
 	
 	
 	
-	
+	// coffe테이블 전체 데이터 가져오기 - 첫화면에 목록으로 출력하기 위해
 	public List<CoffeDto> select(){
 		String sql="select * from coffe";
 		
