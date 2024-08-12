@@ -63,7 +63,7 @@ public class CoffeDao {
 	}
 	
 	
-	public void insert(CoffeDto coffeDto) {
+	public void insert(CoffeDto coffeDto) { //커피정보 데이터이스에 저장
 		String sql="insert into coffe(item_name, price, decaffein) values(?,?,?)";
 		
 		cf.update(sql , coffeDto.getItemName(), coffeDto.getPrice(), coffeDto.getDecaffein() );
@@ -83,14 +83,14 @@ public class CoffeDao {
 		
 	
 	}
-
+	
+// 커피정보를 데이터베이스에 수정하여 저장하기
 	public void update(CoffeDto coffeDto) {
-		String sql="update coffe set item_name=? , price=? ,"+
-		" decaffein=?";
+		String sql="update coffe set item_name=? , price=? , decaffein=? "+
+					" where coffe_id=?";
 		
 		cf.update(sql,coffeDto.getItemName(), coffeDto.getPrice(),
-				coffeDto.getDecaffein() );
-		
+				coffeDto.getDecaffein(), coffeDto.getCoffeId());
 	}
 	
 

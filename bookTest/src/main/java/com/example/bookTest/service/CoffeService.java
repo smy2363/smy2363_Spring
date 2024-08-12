@@ -14,7 +14,7 @@ public class CoffeService {
 	private  CoffeDao coffeDao;
 	
 	//커피 메뉴 삭제
-	public void remo(int del) {
+	public void remove(int del) {
 		coffeDao.delete(del);
 	}
 	
@@ -43,6 +43,7 @@ public class CoffeService {
 		}
 	}
 
+	// 커피정보 수정
 	public void update(CoffeDto coffeDto) {
 		coffeDao.update(coffeDto);
 		

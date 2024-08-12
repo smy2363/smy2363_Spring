@@ -60,7 +60,7 @@ public class CoffeControl {
 	
 	@GetMapping("/coffe/delete")
 	public String coffeRemove(@RequestParam("id")int del) {
-		coffeService.remo(del);
+		coffeService.remove(del);
 		return "redirect:/coffe";
 	}
 	
