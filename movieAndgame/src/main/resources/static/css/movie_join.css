@@ -33,6 +33,7 @@
 	top: 14px;
 	font-size: 19px;
 	color:#999;
+	transition: all 0.3s;
 }
 
 #formData .inputField .focus{
@@ -47,6 +48,23 @@
 }
 
 #formData .inputField select+label{
-	position: stactic;
-	
+	position: static;
+	color: black;
+}
+
+#formData .inputField .active{
+	border-color: black;
+}
+
+#joinBt{
+	border: 0;
+	background: black;
+	color: white;
+	width: 250px;
+	padding: 10px 0;
+	font-size: 23px;
+	font-weight: 700;
+	border-radius:10px;
+	margin: 0 auto;
+	display:block;
 }
