@@ -19,9 +19,9 @@
 <body>
 
 	<div id="wrap">
-		<th:block th:replace="header :: headerFrag"></th:block>
+		<th:block th:replace="movie/header :: headerFrag"></th:block>
 		<th:block layout:fragment="main"></th:block>
-		<div id="ft" th:insert="footer :: footFrag"></div>
+		<div id="ft" th:insert="movie/footer :: footFrag"></div>
 	</div>
 
 

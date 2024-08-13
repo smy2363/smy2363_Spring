@@ -1,23 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title> 영화동아리 </title>
-<!-- 제이쿼리 CDN -->
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-</head>
-<link rel="stylesheet" href="/css/default.css">
-<script src="/js/default.js"></script>
-<body>
-
-	<div id="wrap">
-
-		
-		<div id="main">
-		</div>
-		
-
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">
+	
+	
+	<div layout:fragment="main" id="main">
+		index.html main 부분
+	
 	</div>
+	
 
-</body>
 </html>
