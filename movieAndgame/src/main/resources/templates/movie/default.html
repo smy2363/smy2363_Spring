@@ -21,7 +21,7 @@
 	<div id="wrap">
 		<th:block th:replace="movie/header :: headerFrag"></th:block>
 		<th:block layout:fragment="main"></th:block>
-		<div id="ft" th:insert="movie/footer :: footFrag"></div>
+		<th:block th:replace="movie/footer :: footerFrag"></th:block>
 	</div>
 
 
