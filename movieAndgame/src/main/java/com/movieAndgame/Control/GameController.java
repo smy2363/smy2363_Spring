@@ -11,7 +11,7 @@ import com.movieAndgame.Dto.GameMember;
 @RequestMapping("/game")
 public class GameController {
 	
-	@GetMapping("index")
+	@GetMapping("/index")
 	public String gameHome(Model model) {
 	
 		return "game/index";
@@ -21,7 +21,7 @@ public class GameController {
 	public String gameLogin(Model model) {
 		
 		model.addAttribute("login", new GameMember());
-		return "game/Login/login";
+		return "game/member/login";
 	}
 
 }
