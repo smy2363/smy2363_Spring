@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{game/default}">
+	
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<title layout:fragment="title">게임 회원가입</title>
 
-</body>
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script">
+	<script src="/js.gameJoin.js"></script>
+</th:block>
+</head>	
+	
+	
+	<div layout:fragment="main" id="main">
+
+	
+	</div>
+	
+
 </html>
