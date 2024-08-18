@@ -1,5 +1,6 @@
 package com.movieAndgame.Control;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.movieAndgame.Dto.GameMember;
+import com.movieAndgame.Dto.GameMemberLogin;
 import com.movieAndgame.service.GameMemberService;
 
 @Controller
@@ -20,6 +22,7 @@ public class GameController {
 	@Autowired
 	private GameMemberService gameMemberService;
 	
+	// localhost/game/index 매핑
 	@GetMapping("/index")
 	public String gameHome(Model model) {
 	
@@ -50,5 +53,22 @@ public class GameController {
 		gameMemberService.joinSave(gameMember);
 		return "redirect:/game/login";
 	}
-
+	
+	//로그인
+	@PostMapping("/signIn")
+	public String signIn(@Valid GameMemberLogin gameMemberLogin,
+			BindingResult bind , Model model , HttpSession session) {
+		
+		GameMember user = gameMemberService.login(gameMemberLogin);
+		if(user == null) {
+			bind.rejectValue("password","error.password","이메일 또는 비밀번호가 잘못 되었습니다.");
+		}
+		if(bind.hasErrors())
+			return "game/member/login";
+		
+		// 로그인 성공시 로그인 화면 이전 방문 페이지 이동
+		String preUri = (String)session.getAttribute("preUri");
+		session.setAttribute("user", user);
+		return "redirect:"+preUri;//"redirect:/game/index";
+	}
 }

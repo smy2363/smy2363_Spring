@@ -5,8 +5,12 @@
 <head>
 	<title layout:fragment="title">게임로그인</title>
 
-<th:block layout:fragment="css"></th:block>
-<th:block layout:fragment="script"></th:block>
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="/css/game_login.css">
+</th:block>
+<th:block layout:fragment="script">
+	<script src="/js/game_login.js"></script>
+</th:block>
 
 </head>	
 
@@ -18,10 +22,12 @@
 					<div class="inputField">
 						<input type="text" th:field="*{email}">
 						<label th:for="email">아이디</label>
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError"></p>
 					</div>
 					<div class="inputField">
 						<input type="password" th:field="*{password}">
 						<label th:for="password">비밀번호</label>
+						<p thLif="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError"></p>
 					</div>
 					<div class="loginBt">
 						<button>LOGIN</button>
