@@ -12,7 +12,7 @@
 	<div layout:fragment="main" id="main">
 		<h3>모바일 게임 게시판 후기</h3>
 		<p>
-			<a href="/gamePost/gamewrite">리뷰작성</a>
+			<a href="/gamepost/gamewrite">리뷰작성</a>
 		</p>
 	</div>
 	
@@ -30,7 +30,7 @@
 				 <tr th:each="row:${gameList}">
 				 	<td class="num" th:text="${row.post_id}"></td>
 				 	<td class="title"> 
-				 		<a th:href="@{'/mobileGame/view/'+${row.post_id}}" th:text="${row.title}"></a>
+				 		<a th:href="@{'/gamepost/view/'+${row.post_id}}" th:text="${row.title}"></a>
 				 	</td>
 				 	<td class="name" th:text="${row.gameName}"></td>
 				 	<td class="target" th:text="${row.targetPost}"></td>

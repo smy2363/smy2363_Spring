@@ -67,8 +67,7 @@ public class GameController {
 			return "game/member/login";
 		
 		// 로그인 성공시 로그인 화면 이전 방문 페이지 이동
-		String preUri = (String)session.getAttribute("preUri");
 		session.setAttribute("user", user);
-		return "redirect:"+preUri;//"redirect:/game/index";
+		return "redirect:/game/index";//"redirect:/game/index";
 	}
 }

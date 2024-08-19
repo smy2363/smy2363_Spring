@@ -20,6 +20,6 @@ public class GameMember {
 	@Pattern(regexp="^[a-z0-9]*$", message="영어소문자와 숫자만 가능합니다")
 	private String password;
 	@NotEmpty(message="닉네임을 입력해주세요")
-	private String nickName;
+	private String nick_name;
 
 }

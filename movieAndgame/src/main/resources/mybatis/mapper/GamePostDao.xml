@@ -3,6 +3,10 @@
 
 <mapper namespace="com.movieAndgame.Dao.GamePostDaoImpl">
 
+	<select id="findById" resultType="com.movieAndgame.Dto.GamePostDto">
+		select * from game_post where post_id=#{id}
+	</select>
+
 <!-- 리뷰(후기) 전체 가져오기: 목록 출력을 위해 -->
 	<select id="findAll" resultType="com.movieAndgame.Dto.GamePostDto">
 		select * from game_post order by write_date desc
@@ -11,6 +15,6 @@
 	<insert id="save" parameterType="com.movieAndgame.Dto.GamePostDto">
 		insert into game_post(writer, title, game_name, target_post,write_date)
 		values
-		(#{writer}, #{title}, #{gameName}, ${targetPost} , now())
+		(#{writer}, #{title}, #{game_name}, #{target_post} , now())
 	</insert>
 </mapper>

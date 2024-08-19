@@ -14,5 +14,8 @@ public interface GamePostDaoImpl {
 	
 	//전체 데이터 가져오기 - 목록 출력
 	public List<GamePostDto> findAll();
+	
+	// 글 상세 보기 - 데이터 베이스에서 가져오기 review_id
+	public GamePostDto findById(int id);
 
 }
