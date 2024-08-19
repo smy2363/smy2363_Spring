@@ -30,11 +30,20 @@
 				동작 -> ${}의 0 인덱스 값부터 변수에 하나씩 저장된다.
 				 -->
 				 
-				 <tr th:each="row : ${reviewList}">
-				 	<td class="num" th:text="${row.reviewId}"></td>
-				 	<td class="title" th:text="${row.title}"></td>
-				 	<td class="date" th:text="${row.writeDate}"></td>
+				 <tr th:each="row:${reviewList}">
+				 	<td class="num" th:text="${row.review_id}"></td>
+				 	<td class="title"> 
+				 		<a th:href="@{'/movieMenu/view/'+${row.review_id}}" th:text="${row.title}"></a>
+				 	</td>
+				 	<td class="date" th:text="${#temporals.format(row.write_date,'yyyy-MM-dd')}"></td>
 				 </tr>
+				 
+<!-- 
+	thyeleaf 날짜 출력
+	${#temporals.formatISO(변수명)}
+	
+	${#dates.format(standardDate, 'yyyy-MM-dd HH:mm')} -> 2024-08-19 10:31
+ -->
 			</table>
 			<table id="reviewList">
 			</table>

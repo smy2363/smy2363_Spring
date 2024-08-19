@@ -1,5 +1,7 @@
 package com.movieAndgame.Control;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -17,18 +19,34 @@ import com.movieAndgame.service.GamePostService;
 
 
 @Controller
-@RequestMapping("/gamePost")
+@RequestMapping("/gamepost")
 public class GamePostControl {
 
-	@Autowired
+	@Autowired 	
 	private GamePostService gamePostService;
-	@GetMapping("/m")
+	
+	// 글 내용 작성후 저장 요청
+	@PostMapping("/write")
+	public String write(@Valid GamePostDto gamePostDto,
+			BindingResult bindingResult,Model model) {
+		if(bindingResult.hasErrors()) { 
+			return "game/post/gamewrite";
+		}
+		gamePostService.write(gamePostDto);
+		return "redirect:/gamepost/m";
+	}
+
+	
+	// 첫페이지(리뷰목록)
+	@GetMapping("/gamewrite")
 	public String index(Model model) {
-		
+		List<GamePostDto> list=gamePostService.gamelist();
+		model.addAttribute("gameList", list);
 		
 		return "game/post/index";
 	}
 	
+	//리뷰 작성페이지 요청
 	@GetMapping("/write")
 	public String write(Model model,HttpSession session) {
 		if(session.getAttribute("user") ==null) {// 로그인 상태가 아니면 로그인페이지이동
@@ -44,14 +62,4 @@ public class GamePostControl {
 		return "game/post/gamewrite";
 	}
 	
-	
-	@PostMapping("/write")
-	public String write(@Valid GamePostDto gamePostDto,
-			BindingResult bindingResult,Model model) {
-		if(bindingResult.hasErrors()) {
-			return "game/post/gamewrite";
-		}
-		gamePostService.write(gamePostDto);
-		return "redirect:/gamePost/m";
-	}
 }

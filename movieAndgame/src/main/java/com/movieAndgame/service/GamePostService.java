@@ -1,5 +1,7 @@
 package com.movieAndgame.service;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,15 @@ import com.movieAndgame.Dto.GamePostDto;
 public class GamePostService {
 
 	@Autowired
-	private GamePostDaoImpl gamePostDaoImpl;
+	private GamePostDaoImpl gamePostDao;
+	
+	//game_post 테이블에서 데이터 가져와 컨트롤에 전달(목록 출력)
+	public List<GamePostDto> gamelist(){
+		return gamePostDao.findAll();
+	}
 	
 	public void write(@Valid GamePostDto gamePostDto) {
-		gamePostDaoImpl.save(gamePostDto);
+		gamePostDao.save(gamePostDto);
 		
 	}
 

@@ -19,5 +19,5 @@ public class GamePostDto {
 	private String gameName;
 	@NotBlank(message="내용은 필수입니다.")
 	private String targetPost;
-	private LocalDateTime writeDate;
+	private LocalDateTime write_date;
 }

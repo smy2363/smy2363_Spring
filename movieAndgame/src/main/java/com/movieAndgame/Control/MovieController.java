@@ -15,6 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.movieAndgame.Dto.MovieMember;
 import com.movieAndgame.service.MovieMemberService;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.movieAndgame.Dto.MovieMember;
+import com.movieAndgame.service.MovieMemberService;
 @Controller
 @RequestMapping("/movie")
 public class MovieController {
@@ -72,13 +86,12 @@ public class MovieController {
 				return "movie/member/login";
 			}
 			// 로그인 성공시 로그인 화면 이전 방문 페이지 이동
-			String preUri = (String)session.getAttribute("preUri");
 			session.setAttribute("user", user);
-			return "redirect:"+preUri;//"redirect:/game/index";
+			return "redirect:/movie/index";
 		}
 		
 		
-		@GetMapping("/logout")
+		@GetMapping("/logout") 
 		public String out(HttpSession session) {
 			session.removeAttribute("user");
 			return "redirect:/movie/index";

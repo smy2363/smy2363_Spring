@@ -1,5 +1,7 @@
 package com.movieAndgame.Control;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -26,18 +28,19 @@ public class MovieMenuControl {
 	public String reviewWrite(@Valid MovieReviewDto movieReviewDto,
 			BindingResult bind, Model model) {
 		
-		if(bind.hasErrors()) { // form데잍 값이 유효하지않다면
+		if(bind.hasErrors()) { // form데이터 값이 유효하지않다면
 			return "movie/review/write";
 		}
 		reviewService.save(movieReviewDto);
 		return "redirect:/movieMenu/review";
 	}
 	
-	
+	// 리뷰 첫페이지( 리뷰목록 )
 	@GetMapping("/review")
 	public String reviewMain(Model model) {
 		
-		
+		List<MovieReviewDto> list= reviewService.reviewlist();
+		model.addAttribute("reviewList" ,list);
 		return "movie/review/index";
 	}
 	

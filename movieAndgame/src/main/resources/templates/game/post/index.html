@@ -12,11 +12,38 @@
 		<div id="section_top">
 			<h3>모바일 게임 공략 </h3>
 			<p> 
-				<a href="/gamePost/write"> 리뷰 작성 </a>
+				<a href="/gamepost/gameWrite"> 리뷰 작성 </a>
 			</p>
-		</div>			
-				
+		</div>	
 		<div id="section_middle">
+			<table id="reviewList">
+				<tr>
+					<th class="num">번호</th>
+					<th class="title">제목</th>
+					<th class="date">작성일</th>
+				</tr>
+				<!-- th:each="변수" : %{배열또는 컬렉션}"
+				동작 -> ${}의 0 인덱스 값부터 변수에 하나씩 저장된다.
+				 -->
+				 
+				 <tr th:each="row:${gameList}">
+				 	<td class="num" th:text="${row.post_id}"></td>
+				 	<td class="writer" th:text="${row.writer}"></td>
+				 	<td class="title"> 
+				 		<a th:href="@{'/gameMenu/gamewrite'+${row.post_id}}" th:text="${row.title}"></a>
+				 	</td>
+				 	<td class="writer" th:text="${row.gameName}"></td>
+				 	<td class="writer" th:text="${row.targetPost}"></td>
+				 	<td class="date" th:text="${#temporals.format(row.write_date,'yyyy-MM-dd')}"></td>
+				 </tr>
+				 
+<!-- 
+	thyeleaf 날짜 출력
+	${#temporals.formatISO(변수명)}
+	
+	${#dates.format(standardDate, 'yyyy-MM-dd HH:mm')} -> 2024-08-19 10:31
+ -->
+			</table>
 			<table id="reviewList">
 			</table>
 		</div>		
@@ -24,8 +51,8 @@
 		<div id="section_bottom">
 			<div id="searchBox">
 			</div>
-		</div>	
+		</div>		
 	</div>
 
 
-</html>
+</html>		
